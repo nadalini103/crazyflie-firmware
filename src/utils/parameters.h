@@ -14,4 +14,13 @@ const float I_yy = 16.0e-6; // kg.m^2
 const float I_zz = 29.0e-6; // kg.m^2
 const float l = 33.0e-3;    // m
 
+// Lab 2 função PWM
+const float kmotor1 = 1.16e-07; //*x^2
+const float kmotor2 = 4.488e-12; //*x
+
+// Lab 3 K de sustentação
+const float kl = 1.726e-08; // N*s^2
+
+// Lab 4 K de arrasto
+const float kd= 1.434e-10;//N*m*s^2
 #endif
