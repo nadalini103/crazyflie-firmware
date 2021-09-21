@@ -21,16 +21,24 @@ float control_motor ( float omega_r )
 // Converts total trust force (N) and torques (N.m) to angular velocities (rad/s)
 void mixer ( float f_t , float tau_phi , float tau_theta , float tau_psi )
 {
-    if(f_t>=0 & tau_phi >=0 & tau_theta>=0 & tau_psi>=0){
-        omega_1=pow((f_t/(4*kl) -tau_phi/(4*kl*l) -tau_theta/(4*kl*l) -tau_psi/(4*kd)),0.5);
-        omega_2=pow((f_t/(4*kl) -tau_phi/(4*kl*l) +tau_theta/(4*kl*l) +tau_psi/(4*kd)),0.5);
-        omega_3=pow((f_t/(4*kl) +tau_phi/(4*kl*l) +tau_theta/(4*kl*l) -tau_psi/(4*kd)),0.5);
-        omega_4=pow((f_t/(4*kl) +tau_phi/(4*kl*l) -tau_theta/(4*kl*l) +tau_psi/(4*kd)),0.5);
-    }
-    else{
+    omega_1=pow((f_t/(4*kl) -tau_phi/(4*kl*l) -tau_theta/(4*kl*l) -tau_psi/(4*kd)),0.5);
+    omega_2=pow((f_t/(4*kl) -tau_phi/(4*kl*l) +tau_theta/(4*kl*l) +tau_psi/(4*kd)),0.5);
+    omega_3=pow((f_t/(4*kl) +tau_phi/(4*kl*l) +tau_theta/(4*kl*l) -tau_psi/(4*kd)),0.5);
+    omega_4=pow((f_t/(4*kl) +tau_phi/(4*kl*l) -tau_theta/(4*kl*l) +tau_psi/(4*kd)),0.5);
+    if (omega_1 < 0) 
+    {
         omega_1=0;
+    }
+    if (omega_2 < 0) 
+    {
         omega_2=0;
+    }
+    if (omega_3 < 0) 
+    {
         omega_3=0;
+    }
+    if (omega_4 < 0) 
+    {
         omega_4=0;
     }
 }
@@ -54,8 +62,8 @@ motor_2 . period (1.0/500.0) ;
 motor_3 . period (1.0/500.0) ;
 motor_4 . period (1.0/500.0) ;
 // Actuate motor with 70% mg total thrust force (N) and zero torques (N.m)
-actuate (0.7* m*g ,0 ,0 ,0) ;
-wait (5) ;
+actuate (0 , 0, 0, -0.001) ;
+wait (3) ;
 // Turn off all motors
 actuate (0 ,0 ,0 ,0) ;
 // End of program

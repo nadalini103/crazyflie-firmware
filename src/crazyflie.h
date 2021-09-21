@@ -8,6 +8,9 @@
 // Crazyflie 2.0 hardware abstraction layer
 #include "drivers/mpu9250.h"    // IMU sensor
 
+//Mixer:
+#include "modules/mixer.h"
+
 // Flow deck hardware abstraction layer
 #include "drivers/vl53l0x.h"    // Range sensor
 #include "drivers/pmw3901.h"    // Optical flow sensor
