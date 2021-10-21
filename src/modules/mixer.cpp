@@ -16,6 +16,15 @@ armed = 0;
 // Função de segurança para armar os motores:
 void Mixer :: arm()
 {
+    // Blink blue LED indicating inicialization (5 seconds)
+    for (int i=0; i<6;i++)
+    {
+        led_vermL=!led_vermL;
+        led_vermR=!led_vermR;
+        wait(0.4);
+    }
+    led_vermL=0;
+    led_vermR=0;
     armed=1;
 }
 void Mixer :: disarm()
@@ -25,6 +34,9 @@ void Mixer :: disarm()
     motor_2 = 0.0;
     motor_3 = 0.0;
     motor_4 = 0.0;
+    led_vermL=1;
+    led_vermR=1;
+    led_verdL=0;
 }
 // Actuate motors with desired total trust force (N) and torques (N.m)
 void Mixer :: actuate ( float f_t , float tau_phi , float tau_theta , float tau_psi )
