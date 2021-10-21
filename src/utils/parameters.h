@@ -23,4 +23,10 @@ const float kl = 1.726e-08; // N*s^2
 
 // Lab 4 K de arrasto
 const float kd= 1.434e-10;//N*m*s^2
+
+// Lab 7 acelerometro e giroscopio:
+const float dt= 0.002;
+const float wc= 1; //rad/s
+const float alpha= wc*dt/(1+wc*dt);
+
 #endif
