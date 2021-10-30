@@ -1,17 +1,17 @@
 # include "attitude_estimator.h"
 
 // Class constructor
-AttitudeEstimator :: AttitudeEstimator () : imu ( IMU_SDA , IMU_SCL )
+AttitudeEstimator:: AttitudeEstimator(): imu(IMU_SDA,IMU_SCL)
 {
-    float phi=0;
-    float theta=0;
-    float psi=0;
-    float p=0;
-    float q=0;
-    float r=0;
-    float p_bias=0;
-    float q_bias=0;
-    float r_bias=0;
+    phi=0;
+    theta=0;
+    psi=0;
+    p=0;
+    q=0;
+    r=0;
+    p_bias=0;
+    q_bias=0;
+    r_bias=0;
 }
 
 // Initialize class
@@ -30,7 +30,7 @@ void AttitudeEstimator::init()
 }
 
 // Estimate Euler angles (rad ) and angular velocities ( rad /s)
-void AttitudeEstimator :: estimate ()
+void AttitudeEstimator::estimate()
 {
 imu.read();
 //Velocidades angulares menos o erro sistemático:

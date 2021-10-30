@@ -29,4 +29,10 @@ const float dt= 0.002;
 const float wc= 10; //rad/s
 const float alpha= wc*dt/(1+wc*dt);
 
+//Lab 8 - ganhos dos controladores para phi/theta (1) e psi (2):
+const float kd_contr_1=0;
+const float kp_contr_1=0;
+const float kd_contr_2=0;
+const float kp_contr_2=0;
+
 #endif
