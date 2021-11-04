@@ -30,7 +30,16 @@ const float wc= 10; //rad/s
 const float alpha= wc*dt/(1+wc*dt);
 
 //Lab 8 - ganhos dos controladores para phi/theta (1) e psi (2):
-const float kd_contr_1=0;
+void ganho_cont(float Ts,float OS) 
+{
+    float zeta_cont= abs(exp(OS))/sqrt(pow(exp(OS),2)+pow(pi,2));
+    float wn_cont = 4/zeta_cont/Ts;
+    float kp_cont = pow(wn_cont,2);
+    float kd_cont = 2*zeta_cont*wn_cont;
+}
+// Calculo para a dinamica phi/theta:
+ganho_cont(0.3,0.005);
+const float kd_contr_1=;
 const float kp_contr_1=0;
 const float kd_contr_2=0;
 const float kp_contr_2=0;
