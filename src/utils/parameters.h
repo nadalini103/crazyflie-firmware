@@ -44,4 +44,11 @@ const float zeta_cont_2= abs(log(OS_2))/sqrt(pow(log(OS_2),2)+pow(pi,2));
 const float wn_cont_2 = 4.0/(zeta_cont_2*Ts_2);
 const float kd_contr_2=2.0*zeta_cont_2*wn_cont_2;;
 const float kp_contr_2=pow(wn_cont_2,2);
+
+//Lab 9- estimador vertical:
+const float dt_range=0.05;
+const float wc_vert=10; // wc=l<1/dt_range
+const float l1=pow(wc_vert,2);
+const float zeta_vert= (sqrt(2)/2);
+const float l2=2*zeta_vert*wc_vert;
 #endif
