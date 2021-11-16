@@ -26,22 +26,22 @@ const float kd= 1.434e-10;//N*m*s^2
 
 // Lab 7 acelerometro e giroscopio:
 const float dt= 0.002;
-const float wc= 10; //rad/s
+const float wc= 1; //rad/s
 const float alpha= wc*dt/(1+wc*dt);
 
 //Lab 8 - ganhos dos controladores para phi/theta (1) e psi (2):
 // Calculo para a dinamica phi/theta:
-const float Ts_1=0.1;
+const float Ts_1=0.3;
 const float OS_1=0.005;
-const float zeta_cont_1= abs(exp(OS_1))/sqrt(pow(exp(OS_1),2)+pow(pi,2));
-const float wn_cont_1 = (4/zeta_cont_1/Ts_1);
-const float kd_contr_1=2*zeta_cont_1*wn_cont_1;;
+const float zeta_cont_1= abs(log(OS_1))/sqrt(pow(log(OS_1),2)+pow(pi,2));
+const float wn_cont_1 = 4.0/(zeta_cont_1*Ts_1);
+const float kd_contr_1=2.0*zeta_cont_1*wn_cont_1;;
 const float kp_contr_1=pow(wn_cont_1,2);
 
-const float Ts_2=2;
-const float OS_2=0.0005;
-const float zeta_cont_2= abs(exp(OS_2))/sqrt(pow(exp(OS_2),2)+pow(pi,2));
-const float wn_cont_2 = 4/zeta_cont_2/Ts_2;
-const float kd_contr_2=2*zeta_cont_2*wn_cont_2;;
+const float Ts_2=0.6;
+const float OS_2=0.005;
+const float zeta_cont_2= abs(log(OS_2))/sqrt(pow(log(OS_2),2)+pow(pi,2));
+const float wn_cont_2 = 4.0/(zeta_cont_2*Ts_2);
+const float kd_contr_2=2.0*zeta_cont_2*wn_cont_2;;
 const float kp_contr_2=pow(wn_cont_2,2);
 #endif

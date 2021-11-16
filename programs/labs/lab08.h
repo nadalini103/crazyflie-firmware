@@ -22,7 +22,7 @@ void callback()
 int main()
 {
     // Set references
-    float f_t = m*g;
+    float f_t = 0.6*m*g;
     float phi_r = 0.0;
     float theta_r = 0.0;
     float psi_r = 0.0;
