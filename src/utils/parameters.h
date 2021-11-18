@@ -51,4 +51,16 @@ const float wc_vert=10; // wc=l<1/dt_range
 const float l1=pow(wc_vert,2);
 const float zeta_vert= (sqrt(2)/2);
 const float l2=2*zeta_vert*wc_vert;
+
+//Lab 10- controlador vertical:
+const float kp_vert = 5.86;
+const float kd_vert = 3.42;
+
+//Lab 11 - estimador horizontal:
+const float gama = 42; //°
+const float res_W = 420; //pixels
+const float sigma = 2*tan(gama/2)/(res_W*dt);
+const float wc_hor = 50; // wc=l<1/dt_range
+
+
 #endif
