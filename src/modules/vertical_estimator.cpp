@@ -1,7 +1,7 @@
 # include "vertical_estimator.h"
 
 // Class constructor
-VerticalEstimator :: VerticalEstimator () : range (E_SDA , E_SCL )
+VerticalEstimator :: VerticalEstimator () : range (E_SDA, E_SCL)
 {
     z=0.0;
     w=0.0;

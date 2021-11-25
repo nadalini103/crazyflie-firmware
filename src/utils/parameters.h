@@ -38,6 +38,7 @@ const float wn_cont_1 = 4.0/(zeta_cont_1*Ts_1);
 const float kd_contr_1=2.0*zeta_cont_1*wn_cont_1;;
 const float kp_contr_1=pow(wn_cont_1,2);
 
+//psi:
 const float Ts_2=0.6;
 const float OS_2=0.005;
 const float zeta_cont_2= abs(log(OS_2))/sqrt(pow(log(OS_2),2)+pow(pi,2));
@@ -62,5 +63,11 @@ const float res_W = 420; //pixels
 const float sigma = 2*tan(gama/2)/(res_W*dt);
 const float wc_hor = 50; // wc=l<1/dt_range
 
-
+//Lab 12 - controlador horizontal:
+const float Ts_hor=0.6;
+const float OS_hor=0.005;
+const float zeta_hor= abs(log(OS_hor))/sqrt(pow(log(OS_hor),2)+pow(pi,2));
+const float wn_hor = 4.0/(zeta_hor*Ts_hor);
+const float kd_hor=2.0*zeta_hor*wn_hor;;
+const float kp_hor=pow(wn_hor,2);
 #endif
