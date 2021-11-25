@@ -58,7 +58,7 @@ const float kp_vert = 5.86;
 const float kd_vert = 3.42;
 
 //Lab 11 - estimador horizontal:
-const float gama = 42; //°
+const float gama = 42*pi/180; //°
 const float res_W = 420; //pixels
 const float sigma = 2*tan(gama/2)/(res_W*dt);
 const float wc_hor = 50; // wc=l<1/dt_range

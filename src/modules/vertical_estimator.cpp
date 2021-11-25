@@ -8,13 +8,13 @@ VerticalEstimator :: VerticalEstimator () : range (E_SDA, E_SCL)
 }
 
 // Initialize class
-void VerticalEstimator :: init ()
+void VerticalEstimator :: init()
 {
     range.init();
 }
 
 // Predict vertical position and velocity from model
-void VerticalEstimator :: predict( float f_t)
+void VerticalEstimator :: predict(float f_t)
 {
     z= z+w*dt;
     if (z>0.05)
