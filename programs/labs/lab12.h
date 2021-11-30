@@ -29,7 +29,8 @@ int main ()
     float y_r = 0.0;
     float psi_r = 0.0;
     float t_rampa=0.0;
-    float ts_rampa=2
+    float ts_rampa=3;
+    float z_atual=0.0;
     // Initialize estimators objects
     att_est.init();
     ver_est.init();
@@ -42,7 +43,7 @@ int main ()
     while (abs(att_est.phi) <= pi/4.0 && abs(att_est.theta) <= pi/4.0 && abs(att_est.p) <= 4.0*pi && abs(att_est.q) <= 4.0*pi && abs(att_est.r) <= 4.0*pi)
     {
         t_rampa+=dt;
-        z_atual=z_r/t
+        z_atual=z_r/ts_rampa;
         if (flag)
         {
             flag = false ;
