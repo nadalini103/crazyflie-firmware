@@ -2,13 +2,13 @@
 # include "crazyflie.h"
 
 // Crazyflie controller objects
-Mixer mixer ;
-AttitudeEstimator att_est ;
-AttitudeController att_cont ;
-VerticalEstimator ver_est ;
-VerticalController ver_cont ;
-HorizontalEstimator hor_est ;
-HorizontalController hor_cont ;
+Mixer mixer;
+AttitudeEstimator att_est;
+AttitudeController att_cont;
+VerticalEstimator ver_est;
+VerticalController ver_cont;
+HorizontalEstimator hor_est;
+HorizontalController hor_cont;
 
 // Ticker objects
 Ticker tic , tic_range ;
@@ -24,10 +24,12 @@ void callback_range () { flag_range = true ; }
 int main ()
 {
     // Set references
-    float z_r = 0.5;
+    float z_r = 1.0;
     float x_r = 0.0;
     float y_r = 0.0;
     float psi_r = 0.0;
+    float t_rampa=0.0;
+    float ts_rampa=2
     // Initialize estimators objects
     att_est.init();
     ver_est.init();
@@ -39,7 +41,9 @@ int main ()
     mixer.arm();
     while (abs(att_est.phi) <= pi/4.0 && abs(att_est.theta) <= pi/4.0 && abs(att_est.p) <= 4.0*pi && abs(att_est.q) <= 4.0*pi && abs(att_est.r) <= 4.0*pi)
     {
-        if ( flag )
+        t_rampa+=dt;
+        z_atual=z_r/t
+        if (flag)
         {
             flag = false ;
             att_est.estimate();

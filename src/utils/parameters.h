@@ -54,8 +54,13 @@ const float zeta_vert= (sqrt(2)/2);
 const float l2=2*zeta_vert*wc_vert;
 
 //Lab 10- controlador vertical:
-const float kp_vert = 5.86;
-const float kd_vert = 3.42;
+const float Ts_vert=3.0;
+const float OS_vert=0.005;
+const float zeta_c_vert= abs(log(OS_vert))/sqrt(pow(log(OS_vert),2)+pow(pi,2));
+const float wn_vert = 4.0/(zeta_c_vert*Ts_vert);
+const float kd_vert=2.0*zeta_c_vert*wn_vert;;
+const float kp_vert=pow(wn_vert,2);
+
 
 //Lab 11 - estimador horizontal:
 const float gama = 42*pi/180; //°
@@ -64,7 +69,7 @@ const float sigma = 2*tan(gama/2)/(res_W*dt);
 const float wc_hor = 50; // wc=l<1/dt_range
 
 //Lab 12 - controlador horizontal:
-const float Ts_hor=0.6;
+const float Ts_hor=2.0;
 const float OS_hor=0.005;
 const float zeta_hor= abs(log(OS_hor))/sqrt(pow(log(OS_hor),2)+pow(pi,2));
 const float wn_hor = 4.0/(zeta_hor*Ts_hor);
